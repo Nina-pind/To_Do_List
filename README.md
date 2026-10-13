@@ -15,8 +15,9 @@ Le dépôt est configuré pour être publié sur
 [https://nina-pind.github.io/To_Do_List/](https://nina-pind.github.io/To_Do_List/).
 
 À chaque `push` sur la branche `main`, GitHub Actions construit l'application et la
-publie sur GitHub Pages. Pour le premier déploiement, dans le dépôt, ouvrir
-**Settings > Pages** et choisir **GitHub Actions** comme source de déploiement.
+publie sur GitHub Pages et tente d'activer la fonctionnalité pour le dépôt. Si
+GitHub refuse cette activation, ouvrir **Settings > Pages**, choisir
+**GitHub Actions** comme source, puis relancer le workflow.
 
 Pour lancer localement les vérifications et le build :
 
