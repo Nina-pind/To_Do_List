@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  /* Neutres */
+  --color-cream: #faf9f7;
+  --color-oat: #dad4c8;
+  --color-oat-light: #eee9df;
+  --color-charcoal: #55534e;
+
+  /* Couleurs d'accent */
+  --color-matcha-300: #84e7a5;
+  --color-matcha-600: #078a52;
+  --color-lemon: #fbbd41;
+  --color-ube-300: #c1b0ff;
+  --color-pomegranate: #fc7981;
+
+  /* Ombre « dure » décalée, signature de Clay */
+  --shadow-hard: -6px 6px 0 0 #000;
+
+  /* Animations : chaque variable devient une classe (animate-float, etc.) */
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite reverse;
+  --animate-spin-slow: turn 24s linear infinite;
+  --animate-grow: grow 2.4s ease-in-out infinite;
+  --animate-pop: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-wiggle: wiggle 0.5s ease-in-out;
+
+  /* Les @keyframes décrivent le mouvement image par image */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-30px) rotate(8deg);
+    }
+  }
+  @keyframes turn {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes grow {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+  }
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: scale(0.85) translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-12deg);
+    }
+    75% {
+      transform: rotate(12deg);
+    }
+  }
+}
+
+/* Accessibilité : si la personne a désactivé les animations dans son système,
+   on les neutralise presque toutes */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
